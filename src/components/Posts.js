@@ -5,6 +5,7 @@ import "./Post.css";
 import "./main.css";
 import { Helmet } from "react-helmet";
 
+
 function Post() {
   const numPosts = 16;
   const [visiblePosts, setVisiblePosts] = useState(numPosts);
@@ -105,4 +106,4 @@ function Post() {
   );
 }
 
-export default Post;
+export default React.memo(Post);

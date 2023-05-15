@@ -11,14 +11,14 @@ function PostDetail() {
     const post = data.find((post) => post.post_number === parseInt(postId));
 
     if (!post) {
-        return <div>Post not found</div>;
+        return <div container post-container>Post not found</div>;
     }
     console.log(post.downloads)
     return (
         <div className="container post-container">
             <Helmet>
-                <title>{post.title} | WhatsApp Stickers</title>
-                <meta property="og:title" content={post.title} />
+                <title>{post.title} | Adult 18+ WhatsApp Stickers</title>
+                <meta property="og:title" content='{post.title} Adult 18+ WhatsApp Stickers' />
                 <meta
                     property="og:description"
                     content={`Get ${post.title} sticker pack here`}
@@ -36,7 +36,7 @@ function PostDetail() {
                 <meta name="twitter:image:alt" content="Sticker set preview" />
                 <meta
                     name="description"
-                    content="Free funny animated meme WhatsApp sticker packs for Android & iOS"
+                    content="Free funny animated adult 18+ WhatsApp sticker packs for Android & iOS"
                 />
                 <meta
                     name="keywords"
@@ -67,7 +67,7 @@ function PostDetail() {
                         </div>
                         <div className="col-md-4 col-12 pt-3">
                             <p>Author: Yelnats</p>
-                            <p>Date: {new Date().toLocaleDateString()}</p>
+                            <p>Date: {post.created}</p>
                             <p>Animated: Yes</p>
                             <p>Downloads: {Math.floor(Math.random() * 9000) + 1000}</p>
                             <a href={post.download_link} download className="btn btn-danger">
@@ -227,4 +227,4 @@ function PostDetail() {
     );
 }
 
-export default PostDetail;
+export default React.memo(PostDetail);
